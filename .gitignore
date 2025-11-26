@@ -1,0 +1,79 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv/
+env/
+ENV/
+.ENV/
+pip-wheel-metadata/
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*~
+# macOS files
+.DS_Store
+# Logs and databases
+*.log
+*.sqlite3
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+# Test output
+nosetests.xml
+coverage.xml
+test-results/
+# Sphinx documentation
+docs/_build/
+# Temporary files
+tmp/
+temp/
+# System files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+# dotenv environment variables file
+.env
+.env.*
+# pytest cache
+.pytest_cache/
+# mypy cache
+.mypy_cache/
+# C extensions
+*.so
+# Cython files
+*.c
+*.cpp
+# Compiled files
+*.o
+*.obj
+*.dll
+*.exe
+*.out
+*.class
+# Backup files
+*.bak
+*.old
+*.orig
+# Miscellaneous
+*.log
+*.pot
+*.mo
+*.pid
+*.seed
+*.cover
+*.log
+*.csv
+*.dat
+*.out
+*.aux

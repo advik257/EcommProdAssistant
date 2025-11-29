@@ -3,3 +3,23 @@ langchain_core==1.1.0
 python-dotenv==1.2.1 
 streamlit==1.51.0    
 ipykernel==7.1.0
+beautifulsoup4==4.14.2
+fastapi==0.122.0
+html5lib==1.1
+jinja2==3.1.6
+langchain-astradb==1.0.0
+langchain-cohere==0.5.0
+langchain-groq==1.1.0
+lxml==6.0.2
+python-multipart==0.0.20
+selenium==4.38.0
+undetected-chromedriver==3.5.5
+uvicorn==0.38.0
+structlog==25.5.0
+langgraph==1.0.4
+ragas==0.3.9
+langchain-mcp-adapters==0.1.14
+mcp==1.22.0
+ddgs==9.9.1
+setuptools==80.9.0
+-e . 

@@ -1,0 +1,16 @@
+astra_db:
+  collection_name: "astra_db"
+
+embedding_model:
+  provider: "Cohere"
+  model_name: "embed-v4.0"
+
+retriever:
+  top_k: 4
+
+llm:
+  groq:
+    provider: "groq"
+    model_name: "openai/gpt-oss-20b"
+    temperature: 0
+    max_output_tokens: 2048

@@ -41,7 +41,8 @@ class FlipkartScraper:
             driver.get(product_url)
             time.sleep(4)
             try:
-                driver.find_element(By.XPATH, "//button[contains(text(), '✕')]").click()
+                close_btn = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, "//*[text()='✕']")))
+                close_btn.click()
                 time.sleep(1)
             except Exception as e:
                 print(f"Error occurred while closing popup: {e}")
@@ -51,7 +52,7 @@ class FlipkartScraper:
                 time.sleep(1.5)
 
             soup = BeautifulSoup(driver.page_source, "html.parser")
-            review_blocks = soup.select("div._27M-vq, div.col.EPCmJX, div._6K-7Co")
+            review_blocks = soup.select("div.G4PxIA")
             seen = set()
             reviews = []
 
@@ -111,8 +112,9 @@ class FlipkartScraper:
                 href = link_el.get_attribute("href")
                 product_link = href if href.startswith("http") else "https://www.flipkart.com" + href
                 time.sleep(2)
-                match = re.findall(r"/span/(itm[0-9A-Za-z]+)", href)
+                match = re.findall(r"/p/(itm[0-9A-Za-z]+)", href)
                 product_id = match[0] if match else "N/A"
+
             except Exception as e:
                 print(f"Error occurred while processing item: {e}")
                 continue

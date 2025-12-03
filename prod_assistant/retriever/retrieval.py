@@ -5,6 +5,9 @@ from langchain_core.documents import Document
 from prod_assistant.utils.config_loader import load_config
 from prod_assistant.utils.model_loader import ModelLoader
 from dotenv import load_dotenv
+from prod_assistant.evaluation.ragas_eval import evaluate_context_precision, evaluate_response_relevancy
+
+
 
 class Retriever:
     
@@ -66,12 +69,49 @@ class Retriever:
     
 
 if __name__ == "__main__":
-    retriever = Retriever()
+    
+   
     
     user_query ="can you suggest good budget phones?"
-    results = retriever.call_retriever(user_query)
-    for doc in results:
-        print(doc.page_content)
-        print("-----")
-        print(doc.metadata)
+    
+    retriever = Retriever()
+    
+    retriever_docs = retriever.call_retriever(user_query)
+    print(f"Retrieved {len(retriever_docs)} documents.")
+    
+    # def _format_retrieved_docs(doc_or_tuple) -> str:
+    #     # If it's a tuple, take the first element (the Document)
+    #     if isinstance(doc_or_tuple, tuple):
+    #         doc = doc_or_tuple[0]
+    #     else:
+    #         doc = doc_or_tuple
+
+    #     meta = getattr(doc, "metadata", {}) or {}
+    #     formatted = (
+    #         f"Title: {meta.get('product_title', 'N/A')}\n"
+    #         f"Price: {meta.get('price', 'N/A')}\n"
+    #         f"Rating: {meta.get('rating', 'N/A')}\n"
+    #         f"Reviews: {getattr(doc, 'page_content', '').strip()}\n"
+    #     )
+    #     return formatted
+    
+    # retrieved_context = [_format_retrieved_docs(doc) for doc in retriever_docs]
+    
+    # # just test the pipeline
+    
+    response ="IPhone 16 plus , Iphone 15 pro max are good budget phones with great features and performance."
+    
+    # context_score = evaluate_context_precision(user_query,response ,retriever_docs)
+    # relevancy_score = evaluate_response_relevancy(user_query,response, retriever_docs)
+    
+    # print("\n Evaluating Context Metrics:")
+    # print("---------------------------")
+    # print("\n Context Precision Score:", context_score)
+    # print("\n Evaluaate Relevancy Score:", relevancy_score)
+    
+    # for idx , doc in enumerate(retrieved_context):
+    #     print(f"Document {idx+1}:")
+    #     print(doc.page_content)
+    #     print("Metadata:", doc.metadata)
+    #     print("-----")
     

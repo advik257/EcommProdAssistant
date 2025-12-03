@@ -10,7 +10,7 @@ from prod_assistant.retriever.retrieval import Retriever
 from prod_assistant.utils.model_loader import ModelLoader
 from langgraph.checkpoint.memory import MemorySaver
 import asyncio
-#from evaluation.ragas_eval import evaluate_context_precision, evaluate_response_relevancy
+from evaluation.ragas_eval import evaluate_context_precision, evaluate_response_relevancy
 
 
 class AgenticRAG:
@@ -155,10 +155,10 @@ class AgenticRAG:
         # function call with be asscoiate
         # you will get some score
         # put condition behalf on that score
-        # if relevany>0.75
+        # if relevancy>0.75
             #return
         #else:
-            #contine
+            #continue
 
 
 if __name__ == "__main__":

@@ -23,5 +23,6 @@ mcp==1.22.0
 ddgs==9.9.1
 setuptools==80.9.0
 grpcio==1.76.0
+langchain-community==0.4.1
 
 -e . 

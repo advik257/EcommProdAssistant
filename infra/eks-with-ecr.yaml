@@ -50,6 +50,9 @@ Resources:
       Tags:
         - Key: Name
           Value: PublicSubnet1
+        - Key: kubernetes.io/role/elb
+          Value: 1
+
 
   PublicSubnet2:
     Type: AWS::EC2::Subnet
@@ -61,6 +64,9 @@ Resources:
       Tags:
         - Key: Name
           Value: PublicSubnet2
+        - Key: kubernetes.io/role/elb
+          Value: 1
+
 
   PublicRouteTable:
     Type: AWS::EC2::RouteTable
